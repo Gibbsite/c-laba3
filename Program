@@ -16,7 +16,8 @@ namespace StrategyPattern
 
         static void Main()
         {
-            Context context = Context.GetInstance();
+            Context context = Context.GetInstance(new QuickSort());
+            context.Strategy = new QuickSort();
             int[] array = { 5, 9, 1, 6, 5, 15, 8, 2 };
 
             WriteArray(array);
