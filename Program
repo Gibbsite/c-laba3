@@ -1,0 +1,27 @@
+using StrategySort;
+
+namespace StrategyPattern
+{
+    class Program
+    {
+        static void WriteArray(int[] array)
+        {
+            string output = String.Empty;
+            foreach (int i in array)
+            {
+                output += i + " ";
+            }
+            Console.WriteLine(output.Trim());
+        }
+
+        static void Main()
+        {
+            Context context = Context.GetInstance();
+            int[] array = { 5, 9, 1, 6, 5, 15, 8, 2 };
+
+            WriteArray(array);
+            context.Sort(array);
+            WriteArray(array);
+        }
+    }
+}
